@@ -1,0 +1,96 @@
+@font-face {
+    font-family: "Sometype Mono";
+    font-style: normal;
+    font-weight: 500;
+    src: local("Sometype Mono"),
+        url("SometypeMono-Medium.woff") format("woff");
+}
+
+@mixin font {
+    font-family: Sometype Mono, monospace;
+    font-style: normal;
+    font-weight: 500; 
+}
+
+@mixin gradient-block {
+    background: linear-gradient(
+        90deg,
+        rgb(3, 99, 80) 0%,
+        rgb(7, 121, 123) 100%
+    );
+    color: #fff;
+    border: none;
+}
+
+body {
+    @include font;
+    box-sizing: border-box;
+}
+
+.App {
+    text-align: center;
+}
+
+.App .item-todo {
+
+    @include gradient-block;
+    padding: 14px;
+    width: 250px;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.App .item-todo .item-text {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.App input {
+    padding: 14px 32px 14px 16px;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid rgb(3, 99, 80);
+    outline: none;
+    background: transparent;
+}
+
+.App button {
+
+    font-size: 13px;
+    @include gradient-block;
+    padding: 16px 7px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    outline: none;
+    text-transform: capitalize;
+}
+
+.App .item-todo .item-delete {
+    display: inline-block;
+    cursor: pointer;
+    float: right;
+    font-size: 22px;
+    position: relative;
+    left: -4px;
+    bottom: 5px;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.list_container {
+    margin: 0 auto;
+    padding-bottom: 30px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+
+    h2 {
+        text-transform: lowercase;
+    }
+}
